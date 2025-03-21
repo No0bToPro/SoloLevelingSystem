@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Shop - AI Self Growth</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="shop.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">AI SELF <span class="accent-text">GROWTH</span></div>
+            <ul class="nav-links">
+                <li><a href="index.html">Dashboard</a></li>
+                <li><a href="goals.html">Goals</a></li>
+                <li><a href="progress.html">Progress</a></li>
+                <li><a href="shop.html" class="active">Shop</a></li>
+                <li><a href="resources.html">Resources</a></li>
+            </ul>
+            <div class="page-title">SHOP</div>
+            <div class="user-profile">
+                <div class="level-info">
+                    <div class="level-badge">Level 1</div>
+                    <div class="xp-bar">
+                        <div class="xp-progress" style="width: 20%"></div>
+                    </div>
+                </div>
+                <div class="currency-display">
+                    <i class="fas fa-coins currency-icon"></i>
+                    <span class="currency-amount">0</span>
+                </div>
+                <img src="https://i.pravatar.cc/40?img=12" alt="User Avatar" class="avatar">
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="shop" class="active-section">
+            <h2 class="section-title">SHOP <span class="title-accent"></span></h2>
+            
+            <div class="shop-container">
+                <div class="shop-sidebar">
+                    <div class="currency-balance">
+                        <i class="fas fa-coins currency-icon"></i>
+                        <span class="currency-value">55</span>
+                    </div>
+                    <div class="shop-tabs">
+                        <ul class="shop-categories">
+                            <li class="shop-category" data-category="skills">
+                                <i class="fas fa-book"></i> Skills
+                            </li>
+                            <li class="shop-category active" data-category="potions">
+                                <i class="fas fa-flask"></i> Potions
+                            </li>
+                            <li class="shop-category" data-category="boosts">
+                                <i class="fas fa-bolt"></i> Boosts
+                            </li>
+                            <li class="shop-category" data-category="equipment">
+                                <i class="fas fa-shield-alt"></i> Equipment
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="shop-items">
+                    <div class="shop-category-items active" id="skills-items">
+                        <div class="shop-item">
+                            <div class="shop-item-icon"><i class="fas fa-code"></i></div>
+                            <div class="shop-item-content">
+                                <h3>Coding</h3>
+                                <p>Unlocks programming tasks</p>
+                                <div class="shop-item-attributes">
+                                    <span class="shop-item-level">Required Level: 1</span>
+                                </div>
+                            </div>
+                            <div class="shop-item-price">
+                                <span class="price-amount">100</span>
+                                <i class="fas fa-coins"></i>
+                                <button class="shop-buy-btn" data-item="coding">Buy</button>
+                            </div>
+                        </div>
+                        
+                        <div class="shop-item">
+                            <div class="shop-item-icon"><i class="fas fa-paint-brush"></i></div>
+                            <div class="shop-item-content">
+                                <h3>Drawing</h3>
+                                <p>Unlocks art-based challenges</p>
+                                <div class="shop-item-attributes">
+                                    <span class="shop-item-level">Required Level: 1</span>
+                                </div>
+                            </div>
+                            <div class="shop-item-price">
+                                <span class="price-amount">150</span>
+                                <i class="fas fa-coins"></i>
+                                <button class="shop-buy-btn" data-item="drawing">Buy</button>
+                            </div>
+                        </div>
+                        
+                        <div class="shop-item">
+                            <div class="shop-item-icon"><i class="fas fa-pen-fancy"></i></div>
+                            <div class="shop-item-content">
+                                <h3>Writing</h3>
+                                <p>Unlocks creative writing challenges</p>
+                                <div class="shop-item-attributes">
+                                    <span class="shop-item-level">Required Level: 2</span>
+                                </div>
+                            </div>
+                            <div class="shop-item-price">
+                                <span class="price-amount">200</span>
+                                <i class="fas fa-coins"></i>
+                                <button class="shop-buy-btn" data-item="writing">Buy</button>
+                            </div>
+                        </div>
+                        
+                        <div class="shop-item">
+                            <div class="shop-item-icon"><i class="fas fa-dumbbell"></i></div>
+                            <div class="shop-item-content">
+                                <h3>Fitness Mastery</h3>
+                                <p>Boosts fitness XP gain by 10%</p>
+                                <div class="shop-item-attributes">
+                                    <span class="shop-item-level">Required Level: 3</span>
+                                </div>
+                            </div>
+                            <div class="shop-item-price">
+                                <span class="price-amount">250</span>
+                                <i class="fas fa-coins"></i>
+                                <button class="shop-buy-btn" data-item="fitness_mastery">Buy</button>
+                            </div>
+                        </div>
+                        
+                        <div class="shop-item">
+                            <div class="shop-item-icon"><i class="fas fa-pray"></i></div>
+                            <div class="shop-item-content">
+                                <h3>Meditation Guru</h3>
+                                <p>Unlocks advanced meditation techniques</p>
+                                <div class="shop-item-attributes">
+                                    <span class="shop-item-level">Required Level: 3</span>
+                                </div>
+                            </div>
+                            <div class="shop-item-price">
+                                <span class="price-amount">250</span>
+                                <i class="fas fa-coins"></i>
+                                <button class="shop-buy-btn" data-item="meditation_guru">Buy</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="shop-category-items active" id="potions-items">
+                        <div class="shop-item">
+                            <div class="shop-item-icon potion-icon"><i class="fas fa-vial"></i></div>
+                            <div class="shop-item-content">
+                                <h3>Small Health Potion</h3>
+                                <p>Restores 25% health</p>
+                                <div class="shop-item-attributes">
+                                    <span class="shop-item-level">Required Level: 1</span>
+                                </div>
+                            </div>
+                            <div class="shop-item-price">
+                                <span class="price-amount">50</span>
+                                <i class="fas fa-coins"></i>
+                                <button class="shop-buy-btn" data-item="small_health_potion">Buy</button>
+                            </div>
+                        </div>
+                        
+                        <div class="shop-item">
+                            <div class="shop-item-icon potion-icon"><i class="fas fa-vial"></i></div>
+                            <div class="shop-item-content">
+                                <h3>Medium Health Potion</h3>
+                                <p>Restores 50% health</p>
+                                <div class="shop-item-attributes">
+                                    <span class="shop-item-level">Required Level: 2</span>
+                                </div>
+                            </div>
+                            <div class="shop-item-price">
+                                <span class="price-amount">100</span>
+                                <i class="fas fa-coins"></i>
+                                <button class="shop-buy-btn" data-item="medium_health_potion">Buy</button>
+                            </div>
+                        </div>
+                        
+                        <div class="shop-item">
+                            <div class="shop-item-icon potion-icon"><i class="fas fa-vial"></i></div>
+                            <div class="shop-item-content">
+                                <h3>Large Health Potion</h3>
+                                <p>Restores 100% health</p>
+                                <div class="shop-item-attributes">
+                                    <span class="shop-item-level">Required Level: 3</span>
+                                </div>
+                            </div>
+                            <div class="shop-item-price">
+                                <span class="price-amount">200</span>
+                                <i class="fas fa-coins"></i>
+                                <button class="shop-buy-btn" data-item="large_health_potion">Buy</button>
+                            </div>
+                        </div>
+                        
+                        <div class="shop-item">
+                            <div class="shop-item-icon potion-icon"><i class="fas fa-tint"></i></div>
+                            <div class="shop-item-content">
+                                <h3>Energy Elixir</h3>
+                                <p>Removes fatigue penalty</p>
+                                <div class="shop-item-attributes">
+                                    <span class="shop-item-level">Required Level: 4</span>
+                                </div>
+                            </div>
+                            <div class="shop-item-price">
+                                <span class="price-amount">300</span>
+                                <i class="fas fa-coins"></i>
+                                <button class="shop-buy-btn" data-item="energy_elixir">Buy</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="shop-category-items" id="boosts-items">
+                        <div class="shop-item">
+                            <div class="shop-item-icon boost-icon"><i class="fas fa-meteor"></i></div>
+                            <div class="shop-item-content">
+                                <h3>XP Booster</h3>
+                                <p>+25% XP gain for 1 hour</p>
+                                <div class="shop-item-attributes">
+                                    <span class="shop-item-level">Required Level: 3</span>
+                                </div>
+                            </div>
+                            <div class="shop-item-price">
+                                <span class="price-amount">500</span>
+                                <i class="fas fa-coins"></i>
+                                <button class="shop-buy-btn" data-item="xp_booster">Buy</button>
+                            </div>
+                        </div>
+                        
+                        <div class="shop-item">
+                            <div class="shop-item-icon boost-icon"><i class="fas fa-magnet"></i></div>
+                            <div class="shop-item-content">
+                                <h3>Coin Magnet</h3>
+                                <p>+50% coin gain for 1 hour</p>
+                                <div class="shop-item-attributes">
+                                    <span class="shop-item-level">Required Level: 4</span>
+                                </div>
+                            </div>
+                            <div class="shop-item-price">
+                                <span class="price-amount">750</span>
+                                <i class="fas fa-coins"></i>
+                                <button class="shop-buy-btn" data-item="coin_magnet">Buy</button>
+                            </div>
+                        </div>
+                        
+                        <div class="shop-item">
+                            <div class="shop-item-icon boost-icon"><i class="fas fa-fire-alt"></i></div>
+                            <div class="shop-item-content">
+                                <h3>Task Streak Multiplier</h3>
+                                <p>Doubles XP for completing 5 tasks in a row</p>
+                                <div class="shop-item-attributes">
+                                    <span class="shop-item-level">Required Level: 5</span>
+                                </div>
+                            </div>
+                            <div class="shop-item-price">
+                                <span class="price-amount">1000</span>
+                                <i class="fas fa-coins"></i>
+                                <button class="shop-buy-btn" data-item="task_streak_multiplier">Buy</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="shop-category-items" id="equipment-items">
+                        <div class="shop-item legendary">
+                            <div class="shop-item-icon equipment-icon"><i class="fas fa-dumbbell"></i></div>
+                            <div class="shop-item-content">
+                                <h3>Training Weights</h3>
+                                <p>XP gain +10% permanently</p>
+                                <div class="shop-item-attributes">
+                                    <span class="shop-item-level">Required Level: 5</span>
+                                    <span class="item-rarity">Legendary</span>
+                                </div>
+                            </div>
+                            <div class="shop-item-price">
+                                <span class="price-amount">1000</span>
+                                <i class="fas fa-coins"></i>
+                                <button class="shop-buy-btn" data-item="training_weights">Buy</button>
+                            </div>
+                        </div>
+                        
+                        <div class="shop-item legendary">
+                            <div class="shop-item-icon equipment-icon"><i class="fas fa-book-open"></i></div>
+                            <div class="shop-item-content">
+                                <h3>Scholar's Tome</h3>
+                                <p>Coin gain +10% permanently</p>
+                                <div class="shop-item-attributes">
+                                    <span class="shop-item-level">Required Level: 6</span>
+                                    <span class="item-rarity">Legendary</span>
+                                </div>
+                            </div>
+                            <div class="shop-item-price">
+                                <span class="price-amount">1500</span>
+                                <i class="fas fa-coins"></i>
+                                <button class="shop-buy-btn" data-item="scholars_tome">Buy</button>
+                            </div>
+                        </div>
+                        
+                        <div class="shop-item mythic">
+                            <div class="shop-item-icon equipment-icon"><i class="fas fa-user-graduate"></i></div>
+                            <div class="shop-item-content">
+                                <h3>Legendary Mentor</h3>
+                                <p>Unlocks exclusive secret quests</p>
+                                <div class="shop-item-attributes">
+                                    <span class="shop-item-level">Required Level: 8</span>
+                                    <span class="item-rarity">Mythic</span>
+                                </div>
+                            </div>
+                            <div class="shop-item-price">
+                                <span class="price-amount">2500</span>
+                                <i class="fas fa-coins"></i>
+                                <button class="shop-buy-btn" data-item="legendary_mentor">Buy</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="purchaseModal" class="modal">
+        <div class="modal-content purchase-content">
+            <span class="close">&times;</span>
+            <div class="purchase-confirmation">
+                <div class="purchase-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h2 class="purchase-title">Item Purchased!</h2>
+                <div class="purchase-details">
+                    <div class="purchased-item-name">XP Booster</div>
+                    <div class="purchased-item-description">Your XP gain is increased by 25% for the next hour.</div>
+                </div>
+                <button class="continue-btn">Continue</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="insufficientFundsModal" class="modal">
+        <div class="modal-content insufficient-funds-content">
+            <span class="close">&times;</span>
+            <div class="insufficient-funds">
+                <div class="insufficient-funds-icon">
+                    <i class="fas fa-exclamation-circle"></i>
+                </div>
+                <h2 class="insufficient-funds-title">Insufficient Funds</h2>
+                <div class="insufficient-funds-details">
+                    <p>You don't have enough coins to purchase this item.</p>
+                    <p>Complete more tasks to earn coins!</p>
+                </div>
+                <button class="continue-btn">Continue</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About</h4>
+                <ul>
+                    <li><a href="#">Our Story</a></li>
+                    <li><a href="#">Team</a></li>
+                    <li><a href="#">Careers</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Features</h4>
+                <ul>
+                    <li><a href="#">AI Tracking</a></li>
+                    <li><a href="#">Smart Goals</a></li>
+                    <li><a href="#">Community</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Support</a></li>
+                    <li><a href="#">Feedback</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Connect</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 AI Self Growth. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="shop.js"></script>
+</body>
+</html> 

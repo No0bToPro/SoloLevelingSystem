@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>AI Self Growth</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <span class="accent-text">GROWTH</span>QUEST
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Dashboard</a></li>
+                    <li><a href="goals.html">Goals</a></li>
+                    <li><a href="progress.html">Progress</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                </ul>
+            </nav>
+            <div class="user-profile">
+                <div class="level-info">
+                    <span>Level 1</span>
+                    <div class="xp-bar">
+                        <div class="xp-progress" style="width: 20%"></div>
+                    </div>
+                </div>
+                <div class="currency-display">
+                    <i class="fas fa-coins currency-icon"></i>
+                    <span class="currency-amount">0</span>
+                </div>
+                <img src="https://i.pravatar.cc/40?img=12" alt="User Avatar" class="avatar">
+                <div class="profile-menu">
+                    <a href="#" class="profile-link">Profile</a>
+                    <a href="#" class="profile-link">Settings</a>
+                    <a href="#" class="profile-link">Logout</a>
+                </div>
+            </div>
+        </header>
+        
+        <main>
+            <div class="dashboard-container">
+                <div class="welcome-banner">
+                    <h1>Welcome back, <span class="accent-text">Adventurer!</span></h1>
+                    <p>Continue your journey to self-improvement. Today is a new opportunity to grow.</p>
+                </div>
+                
+                <div class="dashboard-grid">
+                    <div class="dashboard-card streak-card">
+                        <h3><i class="fas fa-fire"></i> Daily Streak</h3>
+                        <div class="dashboard-card-content">
+                            <div class="streak-display">
+                                <span class="streak-value">7</span>
+                                <span class="streak-label">Days</span>
+                            </div>
+                            <div class="streak-message">
+                                <p>Keep up the momentum! You're building habits that will transform your future.</p>
+                            </div>
+                            <div class="streak-bonus">
+                                <span class="bonus-label">Next Milestone (10 days):</span>
+                                <span class="bonus-value">+20 XP Bonus</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="dashboard-card tasks-card">
+                        <h3><i class="fas fa-tasks"></i> Today's Tasks</h3>
+                        <div class="dashboard-card-content">
+                            <div class="tasks-list">
+                                <div class="task-item">
+                                    <input type="checkbox" id="task1">
+                                    <label for="task1">Complete morning meditation (5:00 AM)</label>
+                                </div>
+                                <div class="task-item">
+                                    <input type="checkbox" id="task2">
+                                    <label for="task2">Study machine learning fundamentals (1 hour)</label>
+                                </div>
+                                <div class="task-item">
+                                    <input type="checkbox" id="task3">
+                                    <label for="task3">30-minute workout session</label>
+                                </div>
+                                <div class="task-item">
+                                    <input type="checkbox" id="task4">
+                                    <label for="task4">Read 20 pages of current book</label>
+                                </div>
+                                <div class="task-item">
+                                    <input type="checkbox" id="task5">
+                                    <label for="task5">Practice Spanish vocabulary (15 minutes)</label>
+                                </div>
+                            </div>
+                            <button class="add-task-btn"><i class="fas fa-plus"></i> Add Task</button>
+                        </div>
+                    </div>
+                    
+                    <div class="dashboard-card level-card">
+                        <h3><i class="fas fa-chart-line"></i> Level Progress</h3>
+                        <div class="dashboard-card-content">
+                            <div class="level-progress-display">
+                                <div class="current-level">
+                                    <span class="level-number">1</span>
+                                    <span class="level-label">Explorer</span>
+                                </div>
+                                <div class="level-progress-bar">
+                                    <div class="level-progress" style="width: 20%"></div>
+                                </div>
+                                <div class="level-stats">
+                                    <div class="xp-needed">
+                                        <span>20/100 XP</span>
+                                    </div>
+                                    <div class="next-level">
+                                        <span>Next: Level 2 (Adventurer)</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="recent-xp">
+                                <h4>Recent XP Gained:</h4>
+                                <ul class="xp-list">
+                                    <li class="xp-item">
+                                        <span class="xp-source">Morning Meditation</span>
+                                        <span class="xp-value">+5 XP</span>
+                                    </li>
+                                    <li class="xp-item">
+                                        <span class="xp-source">Daily Login</span>
+                                        <span class="xp-value">+2 XP</span>
+                                    </li>
+                                    <li class="xp-item">
+                                        <span class="xp-source">Completed "Learn Basics" Goal</span>
+                                        <span class="xp-value">+10 XP</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="dashboard-card stats-card">
+                        <h3><i class="fas fa-trophy"></i> Growth Stats</h3>
+                        <div class="dashboard-card-content">
+                            <div class="stats-container">
+                                <div class="stat-item">
+                                    <div class="stat-label">Focus</div>
+                                    <div class="stat-bar">
+                                        <div class="stat-progress" style="width: 65%"></div>
+                                    </div>
+                                    <div class="stat-value">65/100</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-label">Productivity</div>
+                                    <div class="stat-bar">
+                                        <div class="stat-progress" style="width: 78%"></div>
+                                    </div>
+                                    <div class="stat-value">78/100</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-label">Learning</div>
+                                    <div class="stat-bar">
+                                        <div class="stat-progress" style="width: 45%"></div>
+                                    </div>
+                                    <div class="stat-value">45/100</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-label">Wellness</div>
+                                    <div class="stat-bar">
+                                        <div class="stat-progress" style="width: 59%"></div>
+                                    </div>
+                                    <div class="stat-value">59/100</div>
+                                </div>
+                            </div>
+                            <button class="detailed-stats-btn">View Detailed Stats</button>
+                        </div>
+                    </div>
+                    
+                    <div class="dashboard-card activity-card">
+                        <h3><i class="fas fa-history"></i> Recent Activity</h3>
+                        <div class="dashboard-card-content">
+                            <div class="activity-list">
+                                <div class="activity-item">
+                                    <div class="activity-time">Today, 10:30 AM</div>
+                                    <div class="activity-description">Completed meditation session</div>
+                                </div>
+                                <div class="activity-item">
+                                    <div class="activity-time">Today, 8:15 AM</div>
+                                    <div class="activity-description">Created new goal: "Learn Python"</div>
+                                </div>
+                                <div class="activity-item">
+                                    <div class="activity-time">Yesterday, 7:45 PM</div>
+                                    <div class="activity-description">Completed daily tasks</div>
+                                </div>
+                                <div class="activity-item">
+                                    <div class="activity-time">Yesterday, 3:20 PM</div>
+                                    <div class="activity-description">Earned "Early Bird" achievement</div>
+                                </div>
+                                <div class="activity-item">
+                                    <div class="activity-time">Yesterday, 1:15 PM</div>
+                                    <div class="activity-description">Updated progress on "Learn Spanish" goal</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="dashboard-card achievements-card">
+                        <h3><i class="fas fa-medal"></i> Achievements</h3>
+                        <div class="dashboard-card-content">
+                            <div class="achievements-list">
+                                <div class="achievement-item unlocked">
+                                    <div class="achievement-icon">
+                                        <i class="fas fa-sunrise"></i>
+                                    </div>
+                                    <div class="achievement-details">
+                                        <div class="achievement-name">Early Bird</div>
+                                        <div class="achievement-description">Complete a task before 7 AM</div>
+                                    </div>
+                                </div>
+                                <div class="achievement-item unlocked">
+                                    <div class="achievement-icon">
+                                        <i class="fas fa-book-reader"></i>
+                                    </div>
+                                    <div class="achievement-details">
+                                        <div class="achievement-name">Bookworm</div>
+                                        <div class="achievement-description">Read for 5 consecutive days</div>
+                                    </div>
+                                </div>
+                                <div class="achievement-item locked">
+                                    <div class="achievement-icon">
+                                        <i class="fas fa-dumbbell"></i>
+                                    </div>
+                                    <div class="achievement-details">
+                                        <div class="achievement-name">Fitness Enthusiast</div>
+                                        <div class="achievement-description">Complete 10 workout sessions</div>
+                                    </div>
+                                </div>
+                                <div class="achievement-item locked">
+                                    <div class="achievement-icon">
+                                        <i class="fas fa-brain"></i>
+                                    </div>
+                                    <div class="achievement-details">
+                                        <div class="achievement-name">Mind Master</div>
+                                        <div class="achievement-description">Meditate for 30 days</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="view-achievements-btn">View All Achievements</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>About GrowthQuest</h4>
+                    <p>An AI-powered personal growth platform to help you become your best self.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#">Dashboard</a></li>
+                        <li><a href="#">Goals</a></li>
+                        <li><a href="#">Progress</a></li>
+                        <li><a href="#">Resources</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Email: support@growthquest.ai</p>
+                    <p>Phone: (555) 123-4567</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 GrowthQuest. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+    
+    <!-- Modal: Add Goal -->
+    <div class="modal" id="addGoalModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Add New Goal</h2>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form id="add-goal-form">
+                    <div class="form-group">
+                        <label for="goal-title">Goal Title</label>
+                        <input type="text" id="goal-title" placeholder="Enter goal title...">
+                    </div>
+                    <div class="form-group">
+                        <label for="goal-category">Category</label>
+                        <select id="goal-category">
+                            <option value="fitness">Fitness</option>
+                            <option value="learning">Learning</option>
+                            <option value="career">Career</option>
+                            <option value="mindfulness">Mindfulness</option>
+                            <option value="creativity">Creativity</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="goal-description">Description</label>
+                        <textarea id="goal-description" placeholder="Describe your goal..."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="goal-deadline">Deadline (Optional)</label>
+                        <input type="date" id="goal-deadline">
+                    </div>
+                    <div class="form-group">
+                        <label for="goal-difficulty">Difficulty</label>
+                        <select id="goal-difficulty">
+                            <option value="easy">Easy (10 XP)</option>
+                            <option value="medium">Medium (20 XP)</option>
+                            <option value="hard">Hard (50 XP)</option>
+                            <option value="epic">Epic (100 XP)</option>
+                        </select>
+                    </div>
+                    <div class="form-buttons">
+                        <button type="button" class="cancel-btn">Cancel</button>
+                        <button type="submit" class="submit-btn">Add Goal</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal: Achievement Unlocked -->
+    <div class="modal" id="achievementModal">
+        <div class="modal-content achievement-modal">
+            <div class="modal-header">
+                <h2>Achievement Unlocked!</h2>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="achievement-unlocked-display">
+                    <div class="achievement-icon-large">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <div class="achievement-name-large">Early Riser</div>
+                    <div class="achievement-description-large">Complete a task before 7 AM for 5 consecutive days</div>
+                    <div class="achievement-reward-large">Reward: +25 XP, Early Bird Potion</div>
+                </div>
+                <div class="form-buttons">
+                    <button class="claim-btn">Claim Reward</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal: Level Up -->
+    <div class="modal" id="levelUpModal">
+        <div class="modal-content level-up-modal">
+            <div class="modal-header">
+                <h2>Level Up!</h2>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="level-up-display">
+                    <div class="level-icon">
+                        <span class="level-number">2</span>
+                    </div>
+                    <div class="level-up-title">You've reached Level 2: Adventurer!</div>
+                    <div class="level-up-rewards">
+                        <h3>Rewards Unlocked:</h3>
+                        <ul class="rewards-list">
+                            <li class="reward-item">+50 Gold Coins</li>
+                            <li class="reward-item">New Avatar Frames</li>
+                            <li class="reward-item">Focus Potion Recipe</li>
+                            <li class="reward-item">Productivity Boost +5%</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="form-buttons">
+                    <button class="continue-btn">Continue Journey</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal: Goal Completed -->
+    <div class="modal" id="goalCompleteModal">
+        <div class="modal-content goal-complete-modal">
+            <div class="modal-header">
+                <h2>Goal Completed!</h2>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="goal-complete-display">
+                    <div class="goal-complete-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="goal-complete-title">Learn Python Basics</div>
+                    <div class="goal-complete-message">Congratulations! You've completed this goal.</div>
+                    <div class="goal-rewards">
+                        <h3>Rewards:</h3>
+                        <ul class="goal-rewards-list">
+                            <li class="goal-reward-item">+30 XP</li>
+                            <li class="goal-reward-item">+20 Gold Coins</li>
+                            <li class="goal-reward-item">Knowledge Potion</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="form-buttons">
+                    <button class="view-progress-btn">View Progress</button>
+                    <button class="new-goal-btn">Set New Goal</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="dashboard.js"></script>
+</body>
+</html> 

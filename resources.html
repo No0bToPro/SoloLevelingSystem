@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Resources - AI Self Growth</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="resources.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">AI SELF <span class="accent-text">GROWTH</span></div>
+            <ul class="nav-links">
+                <li><a href="index.html">Dashboard</a></li>
+                <li><a href="goals.html">Goals</a></li>
+                <li><a href="progress.html">Progress</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="resources.html" class="active">Resources</a></li>
+            </ul>
+            <div class="page-title">RESOURCES</div>
+            <div class="user-profile">
+                <div class="level-info">
+                    <div class="level-badge">Level 1</div>
+                    <div class="xp-bar">
+                        <div class="xp-progress" style="width: 20%"></div>
+                    </div>
+                </div>
+                <div class="currency-display">
+                    <i class="fas fa-coins currency-icon"></i>
+                    <span class="currency-amount">0</span>
+                </div>
+                <img src="https://i.pravatar.cc/40?img=12" alt="User Avatar" class="avatar">
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="resources" class="active-section">
+            <h2 class="section-title">RESOURCES <span class="title-accent"></span></h2>
+            
+            <div class="resources-filter">
+                <div class="search-box">
+                    <input type="text" placeholder="Search resources..." id="resourceSearch">
+                    <button class="search-btn"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-category="all">All</button>
+                    <button class="filter-btn" data-category="learning">Learning</button>
+                    <button class="filter-btn" data-category="fitness">Fitness</button>
+                    <button class="filter-btn" data-category="meditation">Meditation</button>
+                    <button class="filter-btn" data-category="productivity">Productivity</button>
+                </div>
+            </div>
+            
+            <div class="resources-container">
+                <div class="resources-sidebar">
+                    <h3>Categories</h3>
+                    <ul class="category-list">
+                        <li class="category-item active" data-category="all">All Resources</li>
+                        <li class="category-item" data-category="learning">Learning</li>
+                        <li class="category-item" data-category="fitness">Fitness</li>
+                        <li class="category-item" data-category="meditation">Meditation</li>
+                        <li class="category-item" data-category="productivity">Productivity</li>
+                    </ul>
+                    
+                    <h3>Skill Level</h3>
+                    <ul class="skill-level-list">
+                        <li class="skill-level-item" data-level="beginner">Beginner</li>
+                        <li class="skill-level-item" data-level="intermediate">Intermediate</li>
+                        <li class="skill-level-item" data-level="advanced">Advanced</li>
+                    </ul>
+                    
+                    <h3>Resource Type</h3>
+                    <ul class="resource-type-list">
+                        <li class="resource-type-item" data-type="article">Articles</li>
+                        <li class="resource-type-item" data-type="video">Videos</li>
+                        <li class="resource-type-item" data-type="course">Courses</li>
+                        <li class="resource-type-item" data-type="tool">Tools</li>
+                        <li class="resource-type-item" data-type="book">Books</li>
+                    </ul>
+                </div>
+                
+                <div class="resources-grid">
+                    <div class="featured-resource">
+                        <div class="featured-resource-content">
+                            <div class="featured-resource-badge">Featured</div>
+                            <h3>Complete Guide to Mindfulness Meditation</h3>
+                            <p>Master the art of mindfulness meditation with this comprehensive guide, suitable for beginners and advanced practitioners alike.</p>
+                            <div class="resource-meta">
+                                <span class="resource-category meditation">Meditation</span>
+                                <span class="resource-type course">Course</span>
+                                <span class="resource-level">All Levels</span>
+                            </div>
+                            <div class="resource-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <span class="rating-value">4.5</span>
+                                <span class="rating-count">(128 ratings)</span>
+                            </div>
+                            <button class="explore-btn">Explore Resource</button>
+                        </div>
+                        <div class="featured-resource-image">
+                            <img src="https://images.unsplash.com/photo-1508672019048-805c876b67e2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Meditation Guide">
+                        </div>
+                    </div>
+                    
+                    <div class="resource-card" data-category="learning" data-level="beginner" data-type="course">
+                        <div class="resource-card-image">
+                            <img src="https://images.unsplash.com/photo-1501504905252-473c47e087f8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80" alt="JavaScript Fundamentals">
+                            <div class="resource-type-badge course">Course</div>
+                        </div>
+                        <div class="resource-card-content">
+                            <h3>JavaScript Fundamentals</h3>
+                            <p>Learn the basics of JavaScript programming in this comprehensive guide for beginners.</p>
+                            <div class="resource-meta">
+                                <span class="resource-category learning">Learning</span>
+                                <span class="resource-level">Beginner</span>
+                                <span class="resource-duration"><i class="far fa-clock"></i> 4 hours</span>
+                            </div>
+                            <div class="resource-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                                <span class="rating-count">(86)</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="resource-card" data-category="fitness" data-level="intermediate" data-type="video">
+                        <div class="resource-card-image">
+                            <img src="https://images.unsplash.com/photo-1549060279-7e168fcee0c2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80" alt="HIIT Workout">
+                            <div class="resource-type-badge video">Video</div>
+                        </div>
+                        <div class="resource-card-content">
+                            <h3>30-Minute HIIT Workout</h3>
+                            <p>A high-intensity interval training workout that burns calories and improves cardiovascular health.</p>
+                            <div class="resource-meta">
+                                <span class="resource-category fitness">Fitness</span>
+                                <span class="resource-level">Intermediate</span>
+                                <span class="resource-duration"><i class="far fa-clock"></i> 30 minutes</span>
+                            </div>
+                            <div class="resource-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <span class="rating-count">(142)</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="resource-card" data-category="productivity" data-level="beginner" data-type="article">
+                        <div class="resource-card-image">
+                            <img src="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80" alt="Productivity Guide">
+                            <div class="resource-type-badge article">Article</div>
+                        </div>
+                        <div class="resource-card-content">
+                            <h3>The 5 Pillars of Productivity</h3>
+                            <p>Learn the five fundamental principles that will transform how you manage your time and tasks.</p>
+                            <div class="resource-meta">
+                                <span class="resource-category productivity">Productivity</span>
+                                <span class="resource-level">Beginner</span>
+                                <span class="resource-duration"><i class="far fa-clock"></i> 15 minutes</span>
+                            </div>
+                            <div class="resource-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span class="rating-count">(207)</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="resource-card" data-category="meditation" data-level="beginner" data-type="audio">
+                        <div class="resource-card-image">
+                            <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80" alt="Guided Meditation">
+                            <div class="resource-type-badge audio">Audio</div>
+                        </div>
+                        <div class="resource-card-content">
+                            <h3>Guided Meditation for Beginners</h3>
+                            <p>A gentle introduction to meditation with guided techniques for relaxation and mindfulness.</p>
+                            <div class="resource-meta">
+                                <span class="resource-category meditation">Meditation</span>
+                                <span class="resource-level">Beginner</span>
+                                <span class="resource-duration"><i class="far fa-clock"></i> 20 minutes</span>
+                            </div>
+                            <div class="resource-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                                <span class="rating-count">(95)</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="resource-card" data-category="learning" data-level="advanced" data-type="book">
+                        <div class="resource-card-image">
+                            <img src="https://images.unsplash.com/photo-1509228468518-180dd4864904?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80" alt="Deep Learning Book">
+                            <div class="resource-type-badge book">Book</div>
+                        </div>
+                        <div class="resource-card-content">
+                            <h3>Deep Learning for AI Enthusiasts</h3>
+                            <p>A comprehensive guide to understanding and implementing deep learning algorithms.</p>
+                            <div class="resource-meta">
+                                <span class="resource-category learning">Learning</span>
+                                <span class="resource-level">Advanced</span>
+                                <span class="resource-duration"><i class="far fa-clock"></i> 12 hours</span>
+                            </div>
+                            <div class="resource-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <span class="rating-count">(64)</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="resource-card" data-category="fitness" data-level="advanced" data-type="course">
+                        <div class="resource-card-image">
+                            <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80" alt="Advanced Fitness">
+                            <div class="resource-type-badge course">Course</div>
+                        </div>
+                        <div class="resource-card-content">
+                            <h3>Advanced Strength Training Program</h3>
+                            <p>Take your strength to the next level with this comprehensive 12-week program.</p>
+                            <div class="resource-meta">
+                                <span class="resource-category fitness">Fitness</span>
+                                <span class="resource-level">Advanced</span>
+                                <span class="resource-duration"><i class="far fa-clock"></i> 12 weeks</span>
+                            </div>
+                            <div class="resource-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span class="rating-count">(118)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="ai-coach-section">
+                <div class="ai-coach-container">
+                    <div class="ai-coach-content">
+                        <h3>AI Coach Assistance</h3>
+                        <p>Get personalized recommendations and guidance from our AI coach based on your goals and progress.</p>
+                        <div class="ai-input-container">
+                            <input type="text" placeholder="Ask your AI coach for guidance..." id="aiCoachInput">
+                            <button class="ask-ai-btn">Ask AI</button>
+                        </div>
+                        <div class="sample-questions">
+                            <h4>Sample Questions:</h4>
+                            <ul>
+                                <li>What resources would help me improve my programming skills?</li>
+                                <li>How can I optimize my workout routine for better results?</li>
+                                <li>What meditation techniques are best for reducing stress?</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="ai-coach-image">
+                        <img src="https://images.unsplash.com/photo-1531746790731-6c087fecd65a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80" alt="AI Coach">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="community-resources">
+                <h3>Community Recommended</h3>
+                <p>Top resources recommended by other users on similar growth journeys</p>
+                
+                <div class="community-resources-grid">
+                    <div class="community-resource-card">
+                        <div class="user-recommendation">
+                            <img src="https://i.pravatar.cc/40?img=1" alt="User Avatar" class="recommender-avatar">
+                            <div class="recommendation-info">
+                                <span class="recommender-name">Alex K.</span>
+                                <span class="recommender-level">Level 7</span>
+                            </div>
+                        </div>
+                        <div class="community-resource-content">
+                            <h4>Atomic Habits by James Clear</h4>
+                            <p>This book changed how I approach habit building - a must-read for anyone serious about personal growth.</p>
+                            <div class="resource-meta">
+                                <span class="resource-category productivity">Productivity</span>
+                                <span class="resource-type book">Book</span>
+                            </div>
+                        </div>
+                        <button class="view-resource-btn">View Resource</button>
+                    </div>
+                    
+                    <div class="community-resource-card">
+                        <div class="user-recommendation">
+                            <img src="https://i.pravatar.cc/40?img=5" alt="User Avatar" class="recommender-avatar">
+                            <div class="recommendation-info">
+                                <span class="recommender-name">Mira T.</span>
+                                <span class="recommender-level">Level 5</span>
+                            </div>
+                        </div>
+                        <div class="community-resource-content">
+                            <h4>Harvard CS50: Introduction to Computer Science</h4>
+                            <p>The best free computer science course available. Great for beginners and builds a solid foundation.</p>
+                            <div class="resource-meta">
+                                <span class="resource-category learning">Learning</span>
+                                <span class="resource-type course">Course</span>
+                            </div>
+                        </div>
+                        <button class="view-resource-btn">View Resource</button>
+                    </div>
+                    
+                    <div class="community-resource-card">
+                        <div class="user-recommendation">
+                            <img src="https://i.pravatar.cc/40?img=8" alt="User Avatar" class="recommender-avatar">
+                            <div class="recommendation-info">
+                                <span class="recommender-name">Jordan P.</span>
+                                <span class="recommender-level">Level 9</span>
+                            </div>
+                        </div>
+                        <div class="community-resource-content">
+                            <h4>Waking Up Meditation App</h4>
+                            <p>The most comprehensive meditation app I've found. The daily meditations have transformed my practice.</p>
+                            <div class="resource-meta">
+                                <span class="resource-category meditation">Meditation</span>
+                                <span class="resource-type tool">Tool</span>
+                            </div>
+                        </div>
+                        <button class="view-resource-btn">View Resource</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="resourceModal" class="modal">
+        <div class="modal-content resource-modal-content">
+            <span class="close">&times;</span>
+            <div class="resource-detail">
+                <div class="resource-detail-header">
+                    <div class="resource-detail-image">
+                        <img src="https://images.unsplash.com/photo-1508672019048-805c876b67e2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Meditation Guide">
+                    </div>
+                    <div class="resource-detail-info">
+                        <div class="resource-meta">
+                            <span class="resource-category meditation">Meditation</span>
+                            <span class="resource-type course">Course</span>
+                            <span class="resource-level">All Levels</span>
+                        </div>
+                        <h2>Complete Guide to Mindfulness Meditation</h2>
+                        <div class="resource-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <span class="rating-value">4.5</span>
+                            <span class="rating-count">(128 ratings)</span>
+                        </div>
+                        <div class="resource-stats">
+                            <div class="stat">
+                                <i class="far fa-clock"></i>
+                                <span>8 hours total</span>
+                            </div>
+                            <div class="stat">
+                                <i class="fas fa-users"></i>
+                                <span>2,456 users</span>
+                            </div>
+                            <div class="stat">
+                                <i class="fas fa-calendar-alt"></i>
+                                <span>Updated April 2023</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="resource-detail-content">
+                    <h3>About This Resource</h3>
+                    <p>Master the art of mindfulness meditation with this comprehensive guide, suitable for beginners and advanced practitioners alike. This course takes you from the fundamentals of breath awareness to advanced techniques for developing deep focus and presence.</p>
+                    
+                    <p>Throughout the journey, you'll learn practical techniques that can be applied to daily life, helping you reduce stress, improve focus, and cultivate inner peace. The course includes guided meditations, theoretical instructions, and practical exercises to deepen your practice.</p>
+                    
+                    <h3>What You'll Learn</h3>
+                    <ul class="learning-outcomes">
+                        <li>Fundamental breath awareness techniques</li>
+                        <li>Body scanning and somatic awareness</li>
+                        <li>Working with thoughts and emotions</li>
+                        <li>Loving-kindness and compassion practices</li>
+                        <li>Integrating mindfulness into daily activities</li>
+                        <li>Advanced concentration techniques</li>
+                    </ul>
+                    
+                    <h3>Rewards for Completion</h3>
+                    <div class="completion-rewards">
+                        <div class="reward">
+                            <i class="fas fa-star"></i>
+                            <span>50 XP</span>
+                        </div>
+                        <div class="reward">
+                            <i class="fas fa-coins"></i>
+                            <span>100 Coins</span>
+                        </div>
+                        <div class="reward">
+                            <i class="fas fa-certificate"></i>
+                            <span>Meditation Adept Badge</span>
+                        </div>
+                    </div>
+                    
+                    <div class="resource-actions">
+                        <button class="start-resource-btn">Start Learning</button>
+                        <button class="save-resource-btn"><i class="far fa-bookmark"></i> Save for Later</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About</h4>
+                <ul>
+                    <li><a href="#">Our Story</a></li>
+                    <li><a href="#">Team</a></li>
+                    <li><a href="#">Careers</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Features</h4>
+                <ul>
+                    <li><a href="#">AI Tracking</a></li>
+                    <li><a href="#">Smart Goals</a></li>
+                    <li><a href="#">Community</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Support</a></li>
+                    <li><a href="#">Feedback</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Connect</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 AI Self Growth. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="resources.js"></script>
+</body>
+</html> 

@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Progress - AI Self Growth</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="progress.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">AI SELF <span class="accent-text">GROWTH</span></div>
+            <ul class="nav-links">
+                <li><a href="index.html">Dashboard</a></li>
+                <li><a href="goals.html">Goals</a></li>
+                <li><a href="progress.html" class="active">Progress</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="resources.html">Resources</a></li>
+            </ul>
+            <div class="page-title">PROGRESS</div>
+            <div class="user-profile">
+                <div class="level-info">
+                    <div class="level-badge">Level 1</div>
+                    <div class="xp-bar">
+                        <div class="xp-progress" style="width: 20%"></div>
+                    </div>
+                </div>
+                <div class="currency-display">
+                    <i class="fas fa-coins currency-icon"></i>
+                    <span class="currency-amount">0</span>
+                </div>
+                <img src="https://i.pravatar.cc/40?img=12" alt="User Avatar" class="avatar">
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="progress" class="active-section">
+            <h2 class="section-title">PROGRESS <span class="title-accent"></span></h2>
+            
+            <div class="progress-tabs">
+                <button class="progress-tab active" data-tab="overview">Overview</button>
+                <button class="progress-tab" data-tab="skills">Skills</button>
+                <button class="progress-tab" data-tab="achievements">Achievements</button>
+                <button class="progress-tab" data-tab="analytics">Analytics</button>
+            </div>
+            
+            <div class="progress-content">
+                <div class="progress-tab-content active" id="overview">
+                    <div class="overview-header">
+                        <div class="overview-title">Growth Journey</div>
+                        <div class="time-filter">
+                            <button class="time-btn active" data-time="week">Week</button>
+                            <button class="time-btn" data-time="month">Month</button>
+                            <button class="time-btn" data-time="year">Year</button>
+                            <button class="time-btn" data-time="all">All Time</button>
+                        </div>
+                    </div>
+                    
+                    <div class="overview-grid">
+                        <div class="overview-card">
+                            <div class="overview-card-header">
+                                <i class="fas fa-star"></i>
+                                <h3>XP Gained</h3>
+                            </div>
+                            <div class="overview-card-value">450</div>
+                            <div class="overview-card-change positive">
+                                <i class="fas fa-arrow-up"></i> 15% from last week
+                            </div>
+                        </div>
+                        
+                        <div class="overview-card">
+                            <div class="overview-card-header">
+                                <i class="fas fa-tasks"></i>
+                                <h3>Tasks Completed</h3>
+                            </div>
+                            <div class="overview-card-value">27</div>
+                            <div class="overview-card-change positive">
+                                <i class="fas fa-arrow-up"></i> 8% from last week
+                            </div>
+                        </div>
+                        
+                        <div class="overview-card">
+                            <div class="overview-card-header">
+                                <i class="fas fa-trophy"></i>
+                                <h3>Goals Achieved</h3>
+                            </div>
+                            <div class="overview-card-value">3</div>
+                            <div class="overview-card-change positive">
+                                <i class="fas fa-arrow-up"></i> 2 more than last week
+                            </div>
+                        </div>
+                        
+                        <div class="overview-card">
+                            <div class="overview-card-header">
+                                <i class="fas fa-coins"></i>
+                                <h3>Coins Earned</h3>
+                            </div>
+                            <div class="overview-card-value">920</div>
+                            <div class="overview-card-change positive">
+                                <i class="fas fa-arrow-up"></i> 22% from last week
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="charts-grid">
+                        <div class="chart-container growth-chart">
+                            <h3>Weekly Growth</h3>
+                            <canvas id="weeklyGrowthChart"></canvas>
+                        </div>
+                        
+                        <div class="chart-container category-chart">
+                            <h3>Activity by Category</h3>
+                            <canvas id="categoryChart"></canvas>
+                        </div>
+                    </div>
+                    
+                    <div class="activity-timeline">
+                        <h3>Recent Activity</h3>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-icon">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <h4>Completed Task: Daily Meditation</h4>
+                                    <p class="timeline-time">2 hours ago</p>
+                                    <div class="timeline-rewards">
+                                        <span class="reward"><i class="fas fa-star"></i> +5 XP</span>
+                                        <span class="reward"><i class="fas fa-coins"></i> +5 Coins</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-icon achievement">
+                                    <i class="fas fa-medal"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <h4>Achievement Unlocked: Night Walker</h4>
+                                    <p class="timeline-time">Yesterday at 3:14 AM</p>
+                                    <div class="timeline-rewards">
+                                        <span class="reward"><i class="fas fa-star"></i> +150 XP</span>
+                                        <span class="reward"><i class="fas fa-coins"></i> +750 Coins</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-icon level-up">
+                                    <i class="fas fa-arrow-up"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <h4>Level Up! You've reached Level 2</h4>
+                                    <p class="timeline-time">2 days ago</p>
+                                    <div class="timeline-rewards">
+                                        <span class="reward"><i class="fas fa-unlock"></i> New Features Unlocked</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-icon goal">
+                                    <i class="fas fa-flag-checkered"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <h4>Goal Completed: Read 10 Books</h4>
+                                    <p class="timeline-time">3 days ago</p>
+                                    <div class="timeline-rewards">
+                                        <span class="reward"><i class="fas fa-star"></i> +75 XP</span>
+                                        <span class="reward"><i class="fas fa-coins"></i> +150 Coins</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="progress-tab-content" id="skills">
+                    <div class="skills-header">
+                        <h3>Your Skills Progress</h3>
+                        <p>Track your growth in different skill areas and unlock new abilities.</p>
+                    </div>
+                    
+                    <div class="skills-grid">
+                        <div class="skill-card">
+                            <div class="skill-icon programming">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <div class="skill-details">
+                                <h3>Programming</h3>
+                                <div class="skill-level">Level 3</div>
+                                <div class="skill-progress-bar">
+                                    <div class="skill-progress" style="width: 75%"></div>
+                                </div>
+                                <div class="skill-xp">75/100 XP to Level 4</div>
+                                <div class="skill-stats">
+                                    <div class="skill-stat">
+                                        <i class="fas fa-tasks"></i>
+                                        <span>15 Tasks Completed</span>
+                                    </div>
+                                    <div class="skill-stat">
+                                        <i class="fas fa-clock"></i>
+                                        <span>25 Hours Practiced</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-card">
+                            <div class="skill-icon fitness">
+                                <i class="fas fa-dumbbell"></i>
+                            </div>
+                            <div class="skill-details">
+                                <h3>Fitness</h3>
+                                <div class="skill-level">Level 2</div>
+                                <div class="skill-progress-bar">
+                                    <div class="skill-progress" style="width: 40%"></div>
+                                </div>
+                                <div class="skill-xp">40/100 XP to Level 3</div>
+                                <div class="skill-stats">
+                                    <div class="skill-stat">
+                                        <i class="fas fa-tasks"></i>
+                                        <span>12 Tasks Completed</span>
+                                    </div>
+                                    <div class="skill-stat">
+                                        <i class="fas fa-clock"></i>
+                                        <span>18 Hours Practiced</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-card">
+                            <div class="skill-icon meditation">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <div class="skill-details">
+                                <h3>Meditation</h3>
+                                <div class="skill-level">Level 4</div>
+                                <div class="skill-progress-bar">
+                                    <div class="skill-progress" style="width: 20%"></div>
+                                </div>
+                                <div class="skill-xp">20/100 XP to Level 5</div>
+                                <div class="skill-stats">
+                                    <div class="skill-stat">
+                                        <i class="fas fa-tasks"></i>
+                                        <span>30 Tasks Completed</span>
+                                    </div>
+                                    <div class="skill-stat">
+                                        <i class="fas fa-clock"></i>
+                                        <span>45 Hours Practiced</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-card locked">
+                            <div class="skill-icon locked">
+                                <i class="fas fa-lock"></i>
+                            </div>
+                            <div class="skill-details">
+                                <h3>Drawing</h3>
+                                <p class="skill-locked-message">Purchase this skill in the Shop to unlock</p>
+                                <button class="unlock-skill-btn" data-skill="drawing">
+                                    <i class="fas fa-coins"></i> Unlock for 150 Coins
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="progress-tab-content" id="achievements">
+                    <div class="achievements-header">
+                        <h3>Achievements Gallery</h3>
+                        <p>Discover your earned achievements and hidden ones yet to be unlocked.</p>
+                    </div>
+                    
+                    <div class="achievements-filter">
+                        <button class="achievement-filter-btn active" data-filter="all">All</button>
+                        <button class="achievement-filter-btn" data-filter="unlocked">Unlocked</button>
+                        <button class="achievement-filter-btn" data-filter="locked">Locked</button>
+                    </div>
+                    
+                    <div class="achievements-grid">
+                        <div class="achievement-card unlocked">
+                            <div class="achievement-icon">
+                                <i class="fas fa-moon"></i>
+                            </div>
+                            <div class="achievement-details">
+                                <h4>Night Walker</h4>
+                                <p>Complete a task between 2 AM - 4 AM</p>
+                                <div class="achievement-reward">
+                                    <span><i class="fas fa-star"></i> 150 XP</span>
+                                    <span><i class="fas fa-coins"></i> 750 Coins</span>
+                                </div>
+                                <div class="achievement-date">
+                                    <i class="fas fa-calendar-check"></i> Unlocked May 12, 2023
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="achievement-card unlocked">
+                            <div class="achievement-icon">
+                                <i class="fas fa-fire"></i>
+                            </div>
+                            <div class="achievement-details">
+                                <h4>On Fire</h4>
+                                <p>Complete 7 tasks in a single day</p>
+                                <div class="achievement-reward">
+                                    <span><i class="fas fa-star"></i> 100 XP</span>
+                                    <span><i class="fas fa-coins"></i> 500 Coins</span>
+                                </div>
+                                <div class="achievement-date">
+                                    <i class="fas fa-calendar-check"></i> Unlocked April 28, 2023
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="achievement-card locked">
+                            <div class="achievement-icon locked">
+                                <i class="fas fa-question"></i>
+                            </div>
+                            <div class="achievement-details">
+                                <h4>The Unyielding</h4>
+                                <p>Complete a task after failing it 5 times</p>
+                                <div class="achievement-reward">
+                                    <span><i class="fas fa-star"></i> 100 XP</span>
+                                    <span><i class="fas fa-coins"></i> 500 Coins</span>
+                                </div>
+                                <div class="achievement-hint">
+                                    <i class="fas fa-lightbulb"></i> Hint: Failure is just the beginning of mastery. Try again.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="achievement-card locked">
+                            <div class="achievement-icon locked">
+                                <i class="fas fa-question"></i>
+                            </div>
+                            <div class="achievement-details">
+                                <h4>???</h4>
+                                <p>This achievement is still a mystery...</p>
+                                <div class="achievement-reward">
+                                    <span><i class="fas fa-star"></i> ??? XP</span>
+                                    <span><i class="fas fa-coins"></i> ??? Coins</span>
+                                </div>
+                                <div class="achievement-hint">
+                                    <i class="fas fa-lightbulb"></i> Hint: Some barriers are meant to be broken, if one dares to try...
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="progress-tab-content" id="analytics">
+                    <div class="analytics-header">
+                        <h3>Detailed Analytics</h3>
+                        <p>In-depth analysis of your growth patterns and productivity insights.</p>
+                    </div>
+                    
+                    <div class="analytics-grid">
+                        <div class="analytic-card">
+                            <h4>Productivity by Time of Day</h4>
+                            <div class="analytic-chart-container">
+                                <canvas id="productivityTimeChart"></canvas>
+                            </div>
+                            <div class="analytic-insight">
+                                <i class="fas fa-lightbulb"></i>
+                                <p>You're most productive between 9 AM and 11 AM. Consider scheduling important tasks during this time.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="analytic-card">
+                            <h4>Task Completion Rate</h4>
+                            <div class="analytic-chart-container">
+                                <canvas id="completionRateChart"></canvas>
+                            </div>
+                            <div class="analytic-insight">
+                                <i class="fas fa-lightbulb"></i>
+                                <p>Your task completion rate is 78%, which is 15% higher than last month!</p>
+                            </div>
+                        </div>
+                        
+                        <div class="analytic-card">
+                            <h4>XP Growth Over Time</h4>
+                            <div class="analytic-chart-container">
+                                <canvas id="xpGrowthChart"></canvas>
+                            </div>
+                            <div class="analytic-insight">
+                                <i class="fas fa-lightbulb"></i>
+                                <p>Your XP accumulation rate has increased by 22% in the past month.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="analytic-card">
+                            <h4>Skill Focus Distribution</h4>
+                            <div class="analytic-chart-container">
+                                <canvas id="skillDistributionChart"></canvas>
+                            </div>
+                            <div class="analytic-insight">
+                                <i class="fas fa-lightbulb"></i>
+                                <p>You've been focusing 45% on Programming, 30% on Fitness, and 25% on Meditation.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About</h4>
+                <ul>
+                    <li><a href="#">Our Story</a></li>
+                    <li><a href="#">Team</a></li>
+                    <li><a href="#">Careers</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Features</h4>
+                <ul>
+                    <li><a href="#">AI Tracking</a></li>
+                    <li><a href="#">Smart Goals</a></li>
+                    <li><a href="#">Community</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Support</a></li>
+                    <li><a href="#">Feedback</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Connect</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 AI Self Growth. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="progress.js"></script>
+</body>
+</html> 

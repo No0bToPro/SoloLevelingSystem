@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Goals - AI Self Growth</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="goals.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">AI SELF <span class="accent-text">GROWTH</span></div>
+            <ul class="nav-links">
+                <li><a href="index.html">Dashboard</a></li>
+                <li><a href="goals.html" class="active">Goals</a></li>
+                <li><a href="progress.html">Progress</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="resources.html">Resources</a></li>
+            </ul>
+            <div class="page-title">GOALS</div>
+            <div class="user-profile">
+                <div class="level-info">
+                    <div class="level-badge">Level 1</div>
+                    <div class="xp-bar">
+                        <div class="xp-progress" style="width: 20%"></div>
+                    </div>
+                </div>
+                <div class="currency-display">
+                    <i class="fas fa-coins currency-icon"></i>
+                    <span class="currency-amount">0</span>
+                </div>
+                <img src="https://i.pravatar.cc/40?img=12" alt="User Avatar" class="avatar">
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="goals" class="active-section">
+            <h2 class="section-title">GOALS <span class="title-accent"></span></h2>
+            
+            <div class="goals-container">
+                <div class="goals-header">
+                    <div class="goals-filter">
+                        <button class="filter-btn active" data-filter="all">All Goals</button>
+                        <button class="filter-btn" data-filter="active">Active</button>
+                        <button class="filter-btn" data-filter="completed">Completed</button>
+                    </div>
+                    <div class="add-goal">
+                        <button class="add-goal-btn" id="addGoalBtn">
+                            <i class="fas fa-plus"></i> Add New Goal
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="goal-cards">
+                    <!-- Goal cards will be populated by JS -->
+                    
+                    <!-- Example goal card for visualization -->
+                    <div class="goal-card">
+                        <div class="goal-category learning">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="goal-content">
+                            <h3 class="goal-title">Master JavaScript Fundamentals</h3>
+                            <div class="goal-details">
+                                <div class="goal-deadline">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    <span>Deadline: May 15, 2023</span>
+                                </div>
+                                <div class="goal-difficulty">
+                                    <i class="fas fa-fire"></i>
+                                    <span>Hard</span>
+                                </div>
+                            </div>
+                            <div class="goal-progress-container">
+                                <div class="goal-progress-bar">
+                                    <div class="goal-progress" style="width: 65%"></div>
+                                </div>
+                                <span class="goal-progress-text">65%</span>
+                            </div>
+                            <div class="goal-rewards">
+                                <div class="reward-item">
+                                    <i class="fas fa-star"></i>
+                                    <span>50 XP</span>
+                                </div>
+                                <div class="reward-item">
+                                    <i class="fas fa-coins"></i>
+                                    <span>100 Coins</span>
+                                </div>
+                            </div>
+                            <div class="goal-actions">
+                                <button class="goal-action-btn update-progress" data-id="1">
+                                    <i class="fas fa-chart-line"></i> Update Progress
+                                </button>
+                                <button class="goal-action-btn delete-goal" data-id="1">
+                                    <i class="fas fa-trash-alt"></i> Delete
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="goal-card">
+                        <div class="goal-category fitness">
+                            <i class="fas fa-running"></i>
+                        </div>
+                        <div class="goal-content">
+                            <h3 class="goal-title">Run 5k in Under 30 Minutes</h3>
+                            <div class="goal-details">
+                                <div class="goal-deadline">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    <span>Deadline: June 30, 2023</span>
+                                </div>
+                                <div class="goal-difficulty">
+                                    <i class="fas fa-fire"></i>
+                                    <span>Medium</span>
+                                </div>
+                            </div>
+                            <div class="goal-progress-container">
+                                <div class="goal-progress-bar">
+                                    <div class="goal-progress" style="width: 25%"></div>
+                                </div>
+                                <span class="goal-progress-text">25%</span>
+                            </div>
+                            <div class="goal-rewards">
+                                <div class="reward-item">
+                                    <i class="fas fa-star"></i>
+                                    <span>40 XP</span>
+                                </div>
+                                <div class="reward-item">
+                                    <i class="fas fa-coins"></i>
+                                    <span>80 Coins</span>
+                                </div>
+                            </div>
+                            <div class="goal-actions">
+                                <button class="goal-action-btn update-progress" data-id="2">
+                                    <i class="fas fa-chart-line"></i> Update Progress
+                                </button>
+                                <button class="goal-action-btn delete-goal" data-id="2">
+                                    <i class="fas fa-trash-alt"></i> Delete
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="goal-card completed">
+                        <div class="goal-category personal">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <div class="goal-content">
+                            <h3 class="goal-title">Read 10 Books This Year</h3>
+                            <div class="goal-details">
+                                <div class="goal-deadline">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    <span>Deadline: December 31, 2023</span>
+                                </div>
+                                <div class="goal-difficulty">
+                                    <i class="fas fa-fire"></i>
+                                    <span>Easy</span>
+                                </div>
+                            </div>
+                            <div class="goal-progress-container">
+                                <div class="goal-progress-bar">
+                                    <div class="goal-progress" style="width: 100%"></div>
+                                </div>
+                                <span class="goal-progress-text">Completed!</span>
+                            </div>
+                            <div class="goal-rewards">
+                                <div class="reward-item collected">
+                                    <i class="fas fa-star"></i>
+                                    <span>30 XP</span>
+                                </div>
+                                <div class="reward-item collected">
+                                    <i class="fas fa-coins"></i>
+                                    <span>60 Coins</span>
+                                </div>
+                            </div>
+                            <div class="goal-actions">
+                                <button class="goal-action-btn delete-goal" data-id="3">
+                                    <i class="fas fa-trash-alt"></i> Delete
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="goals-suggested">
+                <h3 class="suggested-title">SUGGESTED GOALS <i class="fas fa-magic"></i></h3>
+                <div class="suggested-goals-container">
+                    <div class="suggested-goal">
+                        <div class="suggested-goal-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <div class="suggested-goal-content">
+                            <h4>Learn a New Programming Language</h4>
+                            <p>Expand your coding knowledge by learning a new language like Python or Rust.</p>
+                            <div class="suggested-goal-details">
+                                <span class="difficulty"><i class="fas fa-fire"></i> Hard</span>
+                                <span class="reward"><i class="fas fa-star"></i> 100 XP</span>
+                                <span class="reward"><i class="fas fa-coins"></i> 200 Coins</span>
+                            </div>
+                        </div>
+                        <button class="add-suggested-btn" data-goal="learn_new_language">
+                            <i class="fas fa-plus"></i> Add Goal
+                        </button>
+                    </div>
+                    
+                    <div class="suggested-goal">
+                        <div class="suggested-goal-icon">
+                            <i class="fas fa-dumbbell"></i>
+                        </div>
+                        <div class="suggested-goal-content">
+                            <h4>30-Day Workout Challenge</h4>
+                            <p>Commit to a daily workout routine for 30 days to build a healthy habit.</p>
+                            <div class="suggested-goal-details">
+                                <span class="difficulty"><i class="fas fa-fire"></i> Medium</span>
+                                <span class="reward"><i class="fas fa-star"></i> 75 XP</span>
+                                <span class="reward"><i class="fas fa-coins"></i> 150 Coins</span>
+                            </div>
+                        </div>
+                        <button class="add-suggested-btn" data-goal="workout_challenge">
+                            <i class="fas fa-plus"></i> Add Goal
+                        </button>
+                    </div>
+                    
+                    <div class="suggested-goal">
+                        <div class="suggested-goal-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="suggested-goal-content">
+                            <h4>Read a Personal Development Book</h4>
+                            <p>Expand your mindset by reading a book that helps you grow personally or professionally.</p>
+                            <div class="suggested-goal-details">
+                                <span class="difficulty"><i class="fas fa-fire"></i> Easy</span>
+                                <span class="reward"><i class="fas fa-star"></i> 40 XP</span>
+                                <span class="reward"><i class="fas fa-coins"></i> 80 Coins</span>
+                            </div>
+                        </div>
+                        <button class="add-suggested-btn" data-goal="read_book">
+                            <i class="fas fa-plus"></i> Add Goal
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="goalModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Add New Goal</h2>
+            <form id="goalForm">
+                <div class="form-group">
+                    <label for="goalTitle">Goal Title</label>
+                    <input type="text" id="goalTitle" required>
+                </div>
+                <div class="form-group">
+                    <label for="goalCategory">Category</label>
+                    <select id="goalCategory">
+                        <option value="learning">Learning</option>
+                        <option value="fitness">Fitness</option>
+                        <option value="personal">Personal</option>
+                        <option value="career">Career</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="goalDifficulty">Difficulty</label>
+                    <select id="goalDifficulty">
+                        <option value="easy">Easy</option>
+                        <option value="medium">Medium</option>
+                        <option value="hard">Hard</option>
+                        <option value="impossible">Impossible</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="goalDeadline">Deadline</label>
+                    <input type="date" id="goalDeadline" required>
+                </div>
+                <div class="form-group reward-preview">
+                    <h4>Expected Rewards</h4>
+                    <div class="expected-rewards">
+                        <div class="reward-item">
+                            <i class="fas fa-star"></i>
+                            <span id="xpReward">30 XP</span>
+                        </div>
+                        <div class="reward-item">
+                            <i class="fas fa-coins"></i>
+                            <span id="coinReward">60 Coins</span>
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="submit-btn">Create Goal</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="goalCompletedModal" class="modal">
+        <div class="modal-content goal-completed-content">
+            <span class="close">&times;</span>
+            <div class="goal-completion">
+                <div class="goal-completion-icon">
+                    <i class="fas fa-trophy"></i>
+                </div>
+                <h2 class="goal-completion-title">Goal Completed!</h2>
+                <div class="goal-completion-name">Run 5k in Under 30 Minutes</div>
+                <div class="rewards-earned">
+                    <h4>Rewards Earned</h4>
+                    <div class="rewards-list">
+                        <div class="reward-item large">
+                            <i class="fas fa-star"></i>
+                            <span>50 XP</span>
+                        </div>
+                        <div class="reward-item large">
+                            <i class="fas fa-coins"></i>
+                            <span>100 Coins</span>
+                        </div>
+                    </div>
+                </div>
+                <button class="continue-btn">Continue</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About</h4>
+                <ul>
+                    <li><a href="#">Our Story</a></li>
+                    <li><a href="#">Team</a></li>
+                    <li><a href="#">Careers</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Features</h4>
+                <ul>
+                    <li><a href="#">AI Tracking</a></li>
+                    <li><a href="#">Smart Goals</a></li>
+                    <li><a href="#">Community</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Support</a></li>
+                    <li><a href="#">Feedback</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Connect</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 AI Self Growth. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="goals.js"></script>
+</body>
+</html> 

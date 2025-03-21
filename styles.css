@@ -1,0 +1,1380 @@
+/* Solo Leveling Theme - Core Styles */
+
+/* CSS Variables */
+:root {
+  /* Colors */
+  --sl-blue: #00a8ff;
+  --sl-light-blue: #33bbff;
+  --sl-dark-blue: #0d142b;
+  --sl-darker-blue: #080d1d;
+  --sl-bg-dark: #0a0c1b;
+  --sl-background: #0a0c1b;
+  --sl-window-bg: rgba(13, 20, 43, 0.9);
+  --sl-border: rgba(0, 168, 255, 0.3);
+  --sl-text: #e0e0e0;
+  --sl-text-secondary: #a0a0a0;
+  --sl-green: #2ecc71;
+  --sl-red: #e74c3c;
+  --sl-yellow: #f1c40f;
+  --sl-purple: #9b59b6;
+  --sl-glow: rgba(0, 168, 255, 0.5);
+  
+  /* Fonts */
+  --font-primary: 'Rajdhani', sans-serif;
+  
+  /* Shadows */
+  --sl-shadow-sm: 0 2px 5px rgba(0, 0, 0, 0.2);
+  --sl-shadow-md: 0 4px 8px rgba(0, 0, 0, 0.3);
+  --sl-shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.4);
+  --sl-shadow-blue: 0 0 0.75rem var(--sl-glow);
+  
+  /* Animation Speeds */
+  --sl-speed-slow: 1.5s;
+  --sl-speed-normal: 0.8s;
+  --sl-speed-fast: 0.4s;
+  --sl-speed-very-fast: 0.2s;
+}
+
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-primary);
+  background-color: var(--sl-background);
+  color: var(--sl-text);
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+a {
+  color: var(--sl-blue);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--sl-light-blue);
+}
+
+ul, ol {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+button, input, select, textarea {
+  font-family: var(--font-primary);
+}
+
+/* Container and Layout */
+.container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Status Window - Core Solo Leveling UI Element */
+.sl-window {
+  background-color: var(--sl-window-bg);
+  border: 1px solid var(--sl-border);
+  border-radius: 0.25rem;
+  padding: 1.25rem;
+  position: relative;
+  overflow: hidden;
+  animation: fadeIn 0.5s ease-out, slideUp 0.5s ease-out;
+}
+
+.sl-window::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--sl-blue), transparent);
+}
+
+.sl-window-title {
+  color: var(--sl-blue);
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+/* Headers */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  line-height: 1.3;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 2rem;
+  color: var(--sl-blue);
+}
+
+h2 {
+  font-size: 1.75rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.25rem;
+}
+
+h5 {
+  font-size: 1.125rem;
+}
+
+h6 {
+  font-size: 1rem;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 0;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--sl-text);
+  letter-spacing: 1px;
+}
+
+.accent-text {
+  color: var(--sl-blue);
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  color: var(--sl-text);
+  font-weight: 500;
+  padding: 0.5rem 0;
+  position: relative;
+  transition: all 0.2s ease;
+  animation: fadeIn 0.3s ease-out backwards;
+}
+
+.nav-links a:nth-child(1) { animation-delay: 0.1s; }
+.nav-links a:nth-child(2) { animation-delay: 0.15s; }
+.nav-links a:nth-child(3) { animation-delay: 0.2s; }
+.nav-links a:nth-child(4) { animation-delay: 0.25s; }
+.nav-links a:nth-child(5) { animation-delay: 0.3s; }
+
+.nav-links a:hover {
+  color: var(--sl-blue);
+}
+
+.nav-links a.active {
+  color: var(--sl-blue);
+}
+
+.nav-links a.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--sl-blue);
+  box-shadow: 0 0 0.5rem var(--sl-glow);
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.level-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-width: 100px;
+  position: relative;
+}
+
+.xp-bar {
+  height: 0.35rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 0.25rem;
+  overflow: hidden;
+}
+
+.xp-progress {
+  height: 100%;
+  background-color: var(--sl-blue);
+  box-shadow: 0 0 0.5rem var(--sl-glow);
+  width: 35%;
+}
+
+.profile-pic {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background-color: var(--sl-dark-blue);
+  border: 1px solid var(--sl-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.profile-pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Progress Bar */
+.sl-progress {
+  height: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 0.25rem;
+  overflow: hidden;
+  margin: 0.5rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.sl-progress-bar {
+  height: 100%;
+  background-color: var(--sl-blue);
+  box-shadow: 0 0 0.5rem var(--sl-glow);
+  transition: width 0.3s ease;
+}
+
+.sl-progress-success .sl-progress-bar {
+  background-color: var(--sl-green);
+}
+
+.sl-progress-warning .sl-progress-bar {
+  background-color: var(--sl-yellow);
+}
+
+.sl-progress-danger .sl-progress-bar {
+  background-color: var(--sl-red);
+}
+
+.sl-progress-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  margin-bottom: 0.25rem;
+}
+
+/* Buttons */
+.sl-btn {
+  background-color: var(--sl-blue);
+  color: var(--sl-text);
+  border: none;
+  padding: 0.5rem 1.25rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.sl-btn:hover {
+  background-color: var(--sl-light-blue);
+  box-shadow: 0 0 0.75rem var(--sl-glow);
+}
+
+.sl-btn.sl-btn-outline {
+  background-color: transparent;
+  border: 1px solid var(--sl-blue);
+  color: var(--sl-blue);
+}
+
+.sl-btn.sl-btn-outline:hover {
+  background-color: rgba(0, 168, 255, 0.1);
+}
+
+.sl-btn.sl-btn-small {
+  padding: 0.25rem 0.75rem;
+  font-size: 0.9rem;
+}
+
+.sl-btn.sl-btn-large {
+  padding: 0.75rem 1.5rem;
+  font-size: 1.1rem;
+}
+
+.sl-btn.sl-btn-success {
+  background-color: var(--sl-green);
+}
+
+.sl-btn.sl-btn-success:hover {
+  background-color: #27ae60;
+  box-shadow: 0 0 0.75rem rgba(46, 204, 113, 0.5);
+}
+
+.sl-btn.sl-btn-danger {
+  background-color: var(--sl-red);
+}
+
+.sl-btn.sl-btn-danger:hover {
+  background-color: #c0392b;
+  box-shadow: 0 0 0.75rem rgba(231, 76, 60, 0.5);
+}
+
+.sl-btn.sl-btn-warning {
+  background-color: var(--sl-yellow);
+  color: #333;
+}
+
+.sl-btn.sl-btn-warning:hover {
+  background-color: #e0b70f;
+  box-shadow: 0 0 0.75rem rgba(241, 196, 15, 0.5);
+}
+
+.sl-btn.sl-btn-secondary {
+  background-color: transparent;
+  border: 1px solid var(--sl-border);
+  color: var(--sl-text);
+}
+
+.sl-btn.sl-btn-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.sl-btn-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+/* Badges */
+.sl-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background-color: var(--sl-blue);
+  color: var(--sl-text);
+}
+
+.sl-badge.sl-badge-success {
+  background-color: var(--sl-green);
+}
+
+.sl-badge.sl-badge-danger {
+  background-color: var(--sl-red);
+}
+
+.sl-badge.sl-badge-warning {
+  background-color: var(--sl-yellow);
+  color: #333;
+}
+
+.sl-badge.sl-badge-outline {
+  background-color: transparent;
+  border: 1px solid var(--sl-blue);
+  color: var(--sl-blue);
+}
+
+/* Tooltips */
+.sl-tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.sl-tooltip-text {
+  visibility: hidden;
+  width: 120px;
+  background-color: var(--sl-dark-blue);
+  color: var(--sl-text);
+  text-align: center;
+  border: 1px solid var(--sl-border);
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+  position: absolute;
+  z-index: 1000;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-size: 0.85rem;
+}
+
+.sl-tooltip:hover .sl-tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+.sl-tooltip-text::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: var(--sl-border) transparent transparent transparent;
+}
+
+/* Flexbox Utilities */
+.sl-flex {
+  display: flex;
+}
+
+.sl-flex-column {
+  flex-direction: column;
+}
+
+.sl-justify-between {
+  justify-content: space-between;
+}
+
+.sl-justify-center {
+  justify-content: center;
+}
+
+.sl-align-center {
+  align-items: center;
+}
+
+.sl-flex-wrap {
+  flex-wrap: wrap;
+}
+
+.sl-gap-sm {
+  gap: 0.5rem;
+}
+
+.sl-gap-md {
+  gap: 1rem;
+}
+
+.sl-gap-lg {
+  gap: 1.5rem;
+}
+
+/* Grid Layout */
+.sl-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+/* Margin and Padding Utilities */
+.sl-mt-1 { margin-top: 0.5rem; }
+.sl-mt-2 { margin-top: 1rem; }
+.sl-mt-3 { margin-top: 1.5rem; }
+.sl-mt-4 { margin-top: 2rem; }
+
+.sl-mb-1 { margin-bottom: 0.5rem; }
+.sl-mb-2 { margin-bottom: 1rem; }
+.sl-mb-3 { margin-bottom: 1.5rem; }
+.sl-mb-4 { margin-bottom: 2rem; }
+
+.sl-m-auto { margin: auto; }
+
+.sl-p-1 { padding: 0.5rem; }
+.sl-p-2 { padding: 1rem; }
+.sl-p-3 { padding: 1.5rem; }
+.sl-p-4 { padding: 2rem; }
+
+/* Text utilities */
+.sl-text-center { text-align: center; }
+.sl-text-right { text-align: right; }
+.sl-text-left { text-align: left; }
+
+.sl-text-blue { color: var(--sl-blue); }
+.sl-text-green { color: var(--sl-green); }
+.sl-text-red { color: var(--sl-red); }
+.sl-text-yellow { color: var(--sl-yellow); }
+.sl-text-secondary { color: var(--sl-text-secondary); }
+
+.sl-text-sm { font-size: 0.85rem; }
+.sl-text-lg { font-size: 1.25rem; }
+
+.sl-font-bold { font-weight: 700; }
+.sl-font-medium { font-weight: 500; }
+
+/* Modals */
+.sl-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.sl-modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.sl-modal {
+  width: 90%;
+  max-width: 500px;
+  background-color: var(--sl-bg-dark);
+  border: 1px solid var(--sl-border);
+  border-radius: 0.25rem;
+  overflow: hidden;
+  position: relative;
+  transform: translateY(20px);
+  transition: transform 0.3s ease;
+}
+
+.sl-modal-overlay.active .sl-modal {
+  transform: translateY(0);
+}
+
+.sl-modal::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--sl-blue), transparent);
+}
+
+.sl-modal-header {
+  padding: 1rem;
+  border-bottom: 1px solid var(--sl-border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sl-modal-title {
+  color: var(--sl-blue);
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.sl-modal-close {
+  background: none;
+  border: none;
+  color: var(--sl-text-secondary);
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+.sl-modal-close:hover {
+  color: var(--sl-blue);
+}
+
+.sl-modal-body {
+  padding: 1.5rem;
+}
+
+.sl-modal-footer {
+  padding: 1rem;
+  border-top: 1px solid var(--sl-border);
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+/* Forms */
+.sl-form-group {
+  margin-bottom: 1.5rem;
+}
+
+.sl-form-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--sl-text);
+  font-weight: 500;
+}
+
+.sl-form-control {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background-color: var(--sl-window-bg);
+  border: 1px solid var(--sl-border);
+  border-radius: 0.25rem;
+  color: var(--sl-text);
+  transition: all 0.2s ease;
+  font-size: 1rem;
+}
+
+.sl-form-control:focus {
+  border-color: var(--sl-blue);
+  box-shadow: 0 0 0.5rem var(--sl-glow);
+  outline: none;
+}
+
+.sl-form-control::placeholder {
+  color: var(--sl-text-secondary);
+  opacity: 0.7;
+}
+
+.sl-form-select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23a0a0a0' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1rem;
+  padding-right: 2.5rem;
+}
+
+/* Animations */
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 var(--sl-glow); }
+  70% { box-shadow: 0 0 0 10px rgba(0, 168, 255, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(0, 168, 255, 0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* New Solo Leveling Animations */
+@keyframes glowPulse {
+  0% { box-shadow: 0 0 5px 0 var(--sl-glow); }
+  50% { box-shadow: 0 0 15px 5px var(--sl-glow); }
+  100% { box-shadow: 0 0 5px 0 var(--sl-glow); }
+}
+
+@keyframes borderFlow {
+  0% { border-color: rgba(0, 168, 255, 0.2); }
+  50% { border-color: rgba(0, 168, 255, 0.8); }
+  100% { border-color: rgba(0, 168, 255, 0.2); }
+}
+
+@keyframes statusScan {
+  0% { background-position: -100% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes levelUp {
+  0% { transform: scale(1); filter: brightness(1); }
+  50% { transform: scale(1.1); filter: brightness(1.5); }
+  100% { transform: scale(1); filter: brightness(1); }
+}
+
+@keyframes battleReady {
+  0% { transform: translateX(0); }
+  20% { transform: translateX(-5px); }
+  40% { transform: translateX(5px); }
+  60% { transform: translateX(-3px); }
+  80% { transform: translateX(3px); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes skillActivate {
+  0% { transform: scale(1); opacity: 1; }
+  20% { transform: scale(0.95); opacity: 0.8; }
+  40% { transform: scale(1.05); opacity: 1; }
+  60% { transform: scale(0.95); opacity: 0.8; }
+  80% { transform: scale(1.02); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes fadeInBlue {
+  0% { background-color: transparent; opacity: 0; }
+  100% { background-color: rgba(0, 168, 255, 0.1); opacity: 1; }
+}
+
+@keyframes scanLine {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+}
+
+@keyframes textFlicker {
+  0% { opacity: 1; }
+  10% { opacity: 0.8; }
+  20% { opacity: 1; }
+  30% { opacity: 0.9; }
+  40% { opacity: 1; }
+  50% { opacity: 0.7; }
+  60% { opacity: 1; }
+  100% { opacity: 1; }
+}
+
+@keyframes appear {
+  0% { transform: scale(0); opacity: 0; }
+  70% { transform: scale(1.05); opacity: 0.7; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* Animation Classes */
+.sl-animate-pulse {
+  animation: pulse 2s infinite;
+}
+
+.sl-animate-fade {
+  animation: fadeIn 0.5s ease-out;
+}
+
+.sl-animate-slide {
+  animation: slideUp 0.5s ease-out;
+}
+
+/* New Animation Classes */
+.sl-animate-glow {
+  animation: glowPulse var(--sl-speed-normal) infinite;
+}
+
+.sl-animate-border {
+  animation: borderFlow var(--sl-speed-slow) infinite;
+}
+
+.sl-animate-scan {
+  position: relative;
+  overflow: hidden;
+}
+
+.sl-animate-scan::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    var(--sl-blue) 50%, 
+    transparent 100%);
+  background-size: 200% 100%;
+  animation: statusScan 2s linear infinite;
+  z-index: 10;
+}
+
+.sl-animate-level-up {
+  animation: levelUp 1s ease;
+}
+
+.sl-animate-battle {
+  animation: battleReady 0.5s ease-in-out;
+}
+
+.sl-animate-skill {
+  animation: skillActivate 0.7s ease;
+}
+
+.sl-animate-fade-blue {
+  animation: fadeInBlue 0.5s forwards;
+}
+
+.sl-animate-scanner {
+  position: relative;
+  overflow: hidden;
+}
+
+.sl-animate-scanner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background: linear-gradient(to bottom, 
+    transparent 0%, 
+    rgba(0, 168, 255, 0.2) 50%, 
+    transparent 100%);
+  z-index: 2;
+  animation: scanLine 2s ease-in-out infinite;
+}
+
+.sl-animate-flicker {
+  animation: textFlicker 3s infinite;
+}
+
+.sl-animate-appear {
+  animation: appear 0.5s ease-out forwards;
+}
+
+/* Animation Delays */
+.sl-delay-1 {
+  animation-delay: 0.1s;
+}
+
+.sl-delay-2 {
+  animation-delay: 0.2s;
+}
+
+.sl-delay-3 {
+  animation-delay: 0.3s;
+}
+
+.sl-delay-4 {
+  animation-delay: 0.4s;
+}
+
+.sl-delay-5 {
+  animation-delay: 0.5s;
+}
+
+/* Animation Speeds */
+.sl-speed-slow {
+  animation-duration: var(--sl-speed-slow);
+}
+
+.sl-speed-normal {
+  animation-duration: var(--sl-speed-normal);
+}
+
+.sl-speed-fast {
+  animation-duration: var(--sl-speed-fast);
+}
+
+.sl-speed-very-fast {
+  animation-duration: var(--sl-speed-very-fast);
+}
+
+/* Enhanced Component Animations */
+
+/* Add scan animation to status windows */
+.sl-window.sl-animate-active {
+  position: relative;
+  overflow: hidden;
+}
+
+.sl-window.sl-animate-active::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(0, 168, 255, 0.1) 50%, 
+    transparent 100%);
+  background-size: 200% 100%;
+  animation: statusScan 2s linear infinite;
+  pointer-events: none;
+}
+
+/* Add glow effect to buttons on hover */
+.sl-btn:hover {
+  animation: glowPulse 1.5s infinite;
+}
+
+/* Add flicker to progress bars */
+.sl-progress-bar.sl-animate-loading {
+  animation: fadeInBlue 1s forwards, glowPulse 2s infinite;
+  background-image: linear-gradient(90deg, 
+    var(--sl-blue) 0%, 
+    var(--sl-light-blue) 50%, 
+    var(--sl-blue) 100%);
+  background-size: 200% 100%;
+  animation: statusScan 2s linear infinite;
+}
+
+/* Page transition animations */
+.page-enter {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.page-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.page-exit {
+  opacity: 1;
+}
+
+.page-exit-active {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .container {
+    padding: 0 1rem;
+  }
+  
+  header {
+    padding: 1rem 0;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .nav-links {
+    width: 100%;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+  }
+  
+  .user-profile {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+  
+  h2 {
+    font-size: 1.35rem;
+  }
+  
+  .sl-btn {
+    padding: 0.5rem 1rem;
+  }
+}
+
+/* Apply animations to common elements */
+.shop-header, .resources-header, .goals-header, .progress-header {
+  animation: fadeIn 0.5s ease-out, slideUp 0.3s ease-out;
+}
+
+.item-card, .goal-card, .resource-card, .progress-card {
+  animation: appear 0.5s ease-out backwards;
+}
+
+/* Staggered animations for grid items */
+.shop-grid .item-card:nth-child(1),
+.goals-container .goal-card:nth-child(1),
+.resources-grid .resource-card:nth-child(1),
+.progress-grid .progress-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.shop-grid .item-card:nth-child(2),
+.goals-container .goal-card:nth-child(2),
+.resources-grid .resource-card:nth-child(2),
+.progress-grid .progress-card:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.shop-grid .item-card:nth-child(3),
+.goals-container .goal-card:nth-child(3),
+.resources-grid .resource-card:nth-child(3),
+.progress-grid .progress-card:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.shop-grid .item-card:nth-child(4),
+.goals-container .goal-card:nth-child(4),
+.resources-grid .resource-card:nth-child(4),
+.progress-grid .progress-card:nth-child(4) {
+  animation-delay: 0.25s;
+}
+
+.shop-grid .item-card:nth-child(n+5),
+.goals-container .goal-card:nth-child(n+5),
+.resources-grid .resource-card:nth-child(n+5),
+.progress-grid .progress-card:nth-child(n+5) {
+  animation-delay: 0.3s;
+}
+
+/* Animated backgrounds for status elements */
+.sl-progress::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+    transparent, 
+    rgba(255, 255, 255, 0.1), 
+    transparent);
+  animation: statusScan 1.5s linear infinite;
+  pointer-events: none;
+}
+
+/* Animated level-up effects */
+.level-up-indicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--sl-blue);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.level-up-indicator.active {
+  animation: levelUp 1s ease-out forwards;
+}
+
+/* Apply scanner animation to important sections */
+header, 
+.shop-filters, 
+.shop-toolbar, 
+.shop-cart, 
+.goals-sidebar,
+.resources-sidebar,
+.progress-tabs {
+  position: relative;
+  overflow: hidden;
+}
+
+header::after, 
+.shop-filters::after, 
+.shop-toolbar::after, 
+.shop-cart::after, 
+.goals-sidebar::after,
+.resources-sidebar::after,
+.progress-tabs::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    var(--sl-blue) 50%, 
+    transparent 100%);
+  background-size: 200% 100%;
+  animation: statusScan 2s linear infinite;
+  z-index: 10;
+}
+
+/* Solo Leveling Specific Effects */
+
+/* Shadow Summoning Effect */
+@keyframes shadowSummon {
+  0% {
+    filter: brightness(1) drop-shadow(0 0 0 var(--sl-blue));
+    transform: scale(1);
+  }
+  25% {
+    filter: brightness(1.5) drop-shadow(0 0 5px var(--sl-blue));
+    transform: scale(0.95);
+  }
+  50% {
+    filter: brightness(1.8) drop-shadow(0 0 10px var(--sl-blue));
+    transform: scale(0.9);
+  }
+  75% {
+    filter: brightness(1.5) drop-shadow(0 0 5px var(--sl-blue));
+    transform: scale(1.05);
+  }
+  100% {
+    filter: brightness(1) drop-shadow(0 0 0 var(--sl-blue));
+    transform: scale(1);
+  }
+}
+
+/* Skill Activation Glow */
+@keyframes skillActivationGlow {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 168, 255, 0);
+    background-color: rgba(0, 168, 255, 0);
+  }
+  30% {
+    box-shadow: 0 0 10px 3px var(--sl-glow);
+    background-color: rgba(0, 168, 255, 0.2);
+  }
+  70% {
+    box-shadow: 0 0 20px 5px var(--sl-glow);
+    background-color: rgba(0, 168, 255, 0.3);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 168, 255, 0);
+    background-color: rgba(0, 168, 255, 0);
+  }
+}
+
+/* Level Up Particles */
+@keyframes particleEmit {
+  0% {
+    transform: translateY(0) translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-80px) translateX(var(--particle-x));
+    opacity: 0;
+  }
+}
+
+/* Status Window Appear */
+@keyframes statusWindowAppear {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+    border-color: rgba(0, 168, 255, 0.8);
+  }
+  70% {
+    opacity: 0.8;
+    transform: scale(1.03);
+    border-color: rgba(0, 168, 255, 0.9);
+  }
+  85% {
+    opacity: 0.9;
+    transform: scale(0.97);
+    border-color: rgba(0, 168, 255, 0.7);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    border-color: var(--sl-border);
+  }
+}
+
+/* Arise Animation for Summoning */
+@keyframes arise {
+  0% {
+    transform: translateY(10px) scale(0.9);
+    opacity: 0;
+    filter: brightness(0.5);
+  }
+  20% {
+    transform: translateY(5px) scale(0.95);
+    opacity: 0.4;
+    filter: brightness(0.7);
+  }
+  40% {
+    transform: translateY(3px) scale(0.98);
+    opacity: 0.6;
+    filter: brightness(0.9);
+  }
+  60% {
+    transform: translateY(2px) scale(1.02);
+    opacity: 0.8;
+    filter: brightness(1.2);
+  }
+  80% {
+    transform: translateY(1px) scale(1.01);
+    opacity: 0.9;
+    filter: brightness(1.1);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+    filter: brightness(1);
+  }
+}
+
+/* Blue Electric Effect */
+@keyframes electricEffect {
+  0% {
+    opacity: 0;
+    filter: blur(2px);
+    box-shadow: 0 0 2px 1px var(--sl-blue);
+  }
+  5% {
+    opacity: 0.8;
+    filter: blur(0);
+    box-shadow: 0 0 4px 2px var(--sl-blue);
+  }
+  10% {
+    opacity: 0.2;
+    filter: blur(1px);
+    box-shadow: 0 0 3px 1px var(--sl-blue);
+  }
+  15% {
+    opacity: 0.9;
+    filter: blur(0);
+    box-shadow: 0 0 5px 3px var(--sl-blue);
+  }
+  20% {
+    opacity: 0.3;
+    filter: blur(1px);
+    box-shadow: 0 0 2px 1px var(--sl-blue);
+  }
+  25% {
+    opacity: 0.8;
+    filter: blur(0);
+    box-shadow: 0 0 4px 2px var(--sl-blue);
+  }
+  30% {
+    opacity: 0.2;
+    filter: blur(1px);
+    box-shadow: 0 0 3px 1px var(--sl-blue);
+  }
+  35% {
+    opacity: 0.7;
+    filter: blur(0);
+    box-shadow: 0 0 4px 2px var(--sl-blue);
+  }
+  40% {
+    opacity: 0.3;
+    filter: blur(1px);
+    box-shadow: 0 0 3px 1px var(--sl-blue);
+  }
+  45% {
+    opacity: 0.9;
+    filter: blur(0);
+    box-shadow: 0 0 5px 3px var(--sl-blue);
+  }
+  50% {
+    opacity: 0.2;
+    filter: blur(1px);
+    box-shadow: 0 0 2px 1px var(--sl-blue);
+  }
+  100% {
+    opacity: 0;
+    filter: blur(2px);
+    box-shadow: 0 0 0 0 var(--sl-blue);
+  }
+}
+
+/* Dagger Strike Effect */
+@keyframes daggerStrike {
+  0% {
+    clip-path: polygon(0 0, 0 0, 0 0);
+    opacity: 0;
+  }
+  5% {
+    clip-path: polygon(0 0, 100% 0, 50% 100%);
+    opacity: 0.8;
+  }
+  15% {
+    clip-path: polygon(0 0, 100% 0, 50% 100%);
+    opacity: 0.7;
+  }
+  20% {
+    clip-path: polygon(0 0, 100% 0, 50% 100%);
+    opacity: 0;
+  }
+  100% {
+    clip-path: polygon(0 0, 100% 0, 50% 100%);
+    opacity: 0;
+  }
+}
+
+/* Solo Leveling Animation Classes */
+.sl-animate-shadow-summon {
+  animation: shadowSummon 1.5s ease-in-out;
+}
+
+.sl-animate-skill-activate {
+  animation: skillActivationGlow 1.2s ease-in-out;
+}
+
+.sl-animate-particles {
+  position: relative;
+}
+
+.sl-animate-particles::before,
+.sl-animate-particles::after {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--sl-blue);
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  box-shadow: 0 0 10px 2px var(--sl-glow);
+}
+
+.sl-animate-particles.active::before {
+  --particle-x: 25px;
+  animation: particleEmit 1s ease-out forwards;
+}
+
+.sl-animate-particles.active::after {
+  --particle-x: -25px;
+  animation: particleEmit 1s ease-out 0.2s forwards;
+}
+
+.sl-animate-status-window {
+  animation: statusWindowAppear 0.8s ease-out;
+}
+
+.sl-animate-arise {
+  animation: arise 1s ease-out;
+}
+
+.sl-animate-electric {
+  position: relative;
+}
+
+.sl-animate-electric::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  animation: electricEffect 0.8s ease-out;
+  pointer-events: none;
+}
+
+.sl-animate-dagger {
+  position: relative;
+  overflow: hidden;
+}
+
+.sl-animate-dagger::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--sl-blue);
+  opacity: 0;
+  animation: daggerStrike 0.5s ease-out;
+  pointer-events: none;
+  z-index: 10;
+}
